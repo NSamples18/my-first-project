@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script>
+    window.SnipcartSettings = {
+        publicApiKey: 'ZDE1OTc5MzMtZGVmMS00ZjZkLThkZjctY2JjYjRhNmRlOTRhNjM4ODAxNzIyMDcwNzU3NTIw',
+        loadStrategy: 'on-user-interaction',
+    };
+
+    (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
+</script>
 <head>
   <!-- Meta information and responsive settings -->
   <meta charset="utf-8">
@@ -48,19 +56,79 @@
     </div>
   </div>
 
-  <!-- Adoption Form Heading -->
-  <h2>Donation Form</h2>
-
   <!-- Adoption Form with stacked fields -->
 <!-- Adoption Form with stacked fields -->
 <main>
-  <form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php">
-    <input type="text" name="name" placeholder="Enter Name" class="forum-InputLayout" required>
-    <input type="text" name="address" placeholder="Enter Address" class="forum-InputLayout" required>
-    <input type="email" name="email" placeholder="Enter Email" class="forum-InputLayout" required>
-    <input type="text" name="dog" placeholder="Enter Amount You Want to Donate" class="forum-InputLayout" required>
-    <input class="forum-SubmitButton" type="submit" value="Submit">
-  </form>
+  <h2>Support the Shelter by Shopping</h2>
+      <p style="text-align: center;">All profits go to supporting our rescued dogs with food, medical care, and love!</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Add to Cart</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="./images/ShelterShirt.jpg" alt="Shelter Logo Shirt" width="150"></td>
+              <td>Shelter Logo T-Shirt</td>
+              <td>$20.00</td>
+              <td>
+                <button 
+                class="forum-button" 
+                  data-item-id="shelter-tee"
+                  data-item-price="20.00"
+                  data-item-url="/DogShelterProducts.html"
+                  data-item-name="Shelter Logo T-Shirt"
+                  data-item-description="Comfortable cotton tee with our shelter logo."
+                  data-item-image="./images/ShelterShirt.jpg">
+                  Add to Cart
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="./images/ShelterHoodie.jpg" alt="Shelter Logo Hoodie" width="150"></td>
+              <td>Shelter Logo Hoodie</td>
+              <td>$35.00</td>
+              <td>
+                <button 
+                  class="forum-button" 
+                  data-item-id="shelter-hoodie"
+                  data-item-price="35.00"
+                  data-item-url="/DogShelterProducts.html"
+                  data-item-name="Shelter Logo Hoodie"
+                  data-item-description="Warm and cozy hoodie for a good cause."
+                  data-item-image="./images/ShelterHoodie.jpg">
+                  Add to Cart
+                </button>  
+              </td>
+            </tr>
+            <tr>
+            </td>
+            <td><img src="./images/ShelterHat.jpg" alt="Shelter Logo Hat" width="150"></td>
+            <td>Shelter Logo Hat</td>
+            <td>$25.00</td>
+            <td>
+              <button 
+                class="forum-button" 
+                data-item-id="shelter-Hat"
+                data-item-price="25.00"
+                data-item-url="/DogShelterProducts.html"
+                data-item-name="Shelter Logo Hat"
+                data-item-description="Stylish hat with our shelter logo."
+                data-item-image="./images/ShelterHat.jpg">
+                Add to Cart
+              </button>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
 </main>
 
 
