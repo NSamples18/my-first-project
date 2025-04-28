@@ -7,7 +7,29 @@
   <title>Adopt a Dog - Safe Haven Dog Shelter</title>
   <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="Project.css">
-
+  <script>
+    function validateForm() {
+      if (document.forms[0].name.value == "") {
+        alert("Name field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].address.value == "") {
+        alert("Address field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].email.value == "") {
+        alert("Email field cannot be empty.");
+        return false;
+      }
+      let amount = document.forms[0].dog.value;
+      if (amount == "" || isNaN(amount) || parseFloat(amount) <= 0) {
+        alert("Donation amount must be a positive number.");
+        return false;
+      }
+      alert("All donation details are valid. Thank you for your generosity!");
+      return true;
+    }
+  </script>
 </head>
 <body>
   <div id="wrapper">
@@ -54,11 +76,11 @@
 
   <!-- Donation Form with stacked fields -->
 <main>
-  <form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php">
-    <input type="text" name="name" placeholder="Enter Name" class="forum-InputLayout" required>
-    <input type="email" name="address" placeholder="Enter Address" class="forum-InputLayout" required>
-    <input type="email" name="email" placeholder="Enter Email" class="forum-InputLayout" required>
-    <input type="text" name="dog" placeholder="Enter Amount you Want to Donate" class="forum-InputLayout" required>
+  <form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm();">
+    <input type="text" name="name" placeholder="Enter Name" class="forum-InputLayout">
+    <input type="email" name="address" placeholder="Enter Address" class="forum-InputLayout">
+    <input type="email" name="email" placeholder="Enter Email" class="forum-InputLayout">
+    <input type="text" name="dog" placeholder="Enter Amount you Want to Donate" class="forum-InputLayout">
     <input class="forum-SubmitButton" type="submit" value="Submit">
   </form>
 </main>

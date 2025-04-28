@@ -7,7 +7,45 @@
   <title>Adopt a Dog - Safe Haven Dog Shelter</title>
   <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="Project.css">
+  <script>
+    function validateForm() {
+      if (document.forms[0].name.value == "") {
+        alert("Name field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].address.value == "") {
+        alert("Address field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].email.value == "") {
+        alert("Email field cannot be empty.");
+        return false;
+      }
+      const helpText = document.forms[0].dog.value;
+      if (helpText == "") {
+        alert("Please describe how you'd like to help.");
+        return false;
+      }
+      if (helpText.length > 1000) {
+        alert("Your message is too long. Please keep it under 1000 characters.");
+        return false;
+      }
+      alert("Thank you for your interest in helping! Form submitted.");
+      return true;
+    }
 
+    function updateCharCount() {
+      const max = 1000;
+      const text = document.getElementById("helpText").value;
+      const remaining = max - text.length;
+      document.getElementById("remaining").innerText = remaining;
+    }
+
+    window.onload = function () {
+      document.getElementById("helpText").addEventListener("input", updateCharCount);
+    };
+  </script>
+  
 </head>
 <body>
   <div id="wrapper">
@@ -51,16 +89,12 @@
 
   <h2>Please complete the form below</h2>
 
-  <!-- Outreach Form with stacked fields -->
-	<form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php">
-			<input type="text" name="name" placeholder="Enter Name" required
-           class="forum-InputLayout">
-			<input type="text" name="address" placeholder="Enter Address" required
-           class="forum-InputLayout">
-			<input type="email" name="email" placeholder="Enter Email" required
-           class="forum-InputLayout">
-			<input type="text" name="dog" placeholder="Enter How You Want to Help" required
-           class="forum-InputLayout">
+	<form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm();">
+			<input type="text" name="name" placeholder="Enter Name" class="forum-InputLayout">
+			<input type="text" name="address" placeholder="Enter Address" class="forum-InputLayout">
+			<input type="email" name="email" placeholder="Enter Email" class="forum-InputLayout">
+           <textarea name="dog" id="helpText" placeholder="Enter how you want to help (max 1000 characters)" maxlength="1000" class="forum-InputLayout" rows="5"></textarea>
+           <p id="charCount" style="text-align:center; color:#204163;">Characters remaining: <span id="remaining">1000</span></p>
 		   <input class="forum-SubmitButton" type="submit" value="Submit">
 	</form>
 </main>

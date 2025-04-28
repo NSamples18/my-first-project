@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta information and responsive settings -->
   <meta charset="utf-8">
   <meta name="description" content="Fill out our dog adoption form to take the next step in rescuing a dog. Safe Haven helps match adoptable dogs with loving families.">
   <title>Adopt a Dog - Safe Haven Dog Shelter</title>
-  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="Project.css">
+
+  <script>
+    function validateForm() {
+      if (document.forms[0].name.value == "") {
+        alert("Name field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].address.value == "") {
+        alert("Address field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].email.value == "") {
+        alert("Email field cannot be empty.");
+        return false;
+      }
+      if (document.forms[0].dog.value == "") {
+        alert("Please enter the name of the dog you want to adopt.");
+        return false;
+      }
+      alert("All fields are valid. Form will now be submitted.");
+      return true;
+    }
+  </script>
 </head>
 <body>
   <div id="wrapper">
-    <!-- Header Section -->
     <header>
       <h1>Adoption Form</h1>
     </header>
-    
-    <!-- Navigation Menu -->
+
     <nav>
       <a href="index.html">Home</a> &nbsp;
       <a href="DogShelterAdoptPage.html">Adopt a Dog</a> &nbsp;
@@ -23,50 +42,31 @@
       <a href="DogShelterCommunityOutReachPage.html">Community Outreach</a>
       <a href="DogShelterProducts.html">Shop</a>
     </nav>
-    
-    <!-- Main Content -->
-<main>
-  <!-- Flex container for logo and welcome text -->
-  <div style="display: flex; align-items: flex-start; margin-bottom: 1em;">
-    <img class="MyLogo" 
-         src="./images/DogShelterLogo.jpg" 
-         alt="Safe Haven Dog Shelter logo" 
-         width="200" 
-         height="200" 
-         style="margin-right: 20px;">
-    <div>
-      <h2 style="padding-right: 20%;">Adoption Form</h2>
-      <div class="MainText">
-        Thank you for choosing adoption—your compassion is about to change a life forever! 
-        At Safe Haven Dog Shelter, we work hard to ensure each adoption is a perfect match, 
-        not just for the dogs in our care, but for the families who welcome them home.
-      
-        This short form helps us understand your needs, lifestyle, and the kind of pup you're hoping to adopt. 
-        It also allows us to ensure the dog you’ve chosen will thrive in your care. Once submitted, 
-        our team will contact you within 2–3 business days to walk you through the next steps, 
-        schedule a meet-and-greet, and answer any questions you have about the adoption process.
+
+    <main>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+        <img class="MyLogo" src="./images/DogShelterLogo.jpg" alt="Safe Haven Dog Shelter logo" width="200" height="200" style="margin-right: 20px;">
+        <div>
+          <h2 style="padding-right: 20%;">Adoption Form</h2>
+          <div class="MainText">
+            Thank you for choosing adoption—your compassion is about to change a life forever!
+            At Safe Haven Dog Shelter, we work hard to ensure each adoption is a perfect match.
+            This short form helps us understand your needs and match you with the right pup.
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Adoption Form Heading -->
-  <h2>Please complete the form below</h2>
+      <h2>Please complete the form below</h2>
 
-  <!-- Adoption Form with stacked fields -->
-<main>
-  <form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php">
-    <input type="text" name="name" placeholder="Enter Name" class="forum-InputLayout" required>
-    <input type="email" name="address" placeholder="Enter Address" class="forum-InputLayout" required>
-    <input type="email" name="email" placeholder="Enter Email" class="forum-InputLayout" required>
-    <input type="text" name="dog" placeholder="Enter Dog You Want to Adopt" class="forum-InputLayout" required>
-    <input class="forum-SubmitButton" type="submit" value="Submit">
-  </form>
-</main>
+      <form class="forum-Layout" method="post" action="https://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm();">
+        <input type="text" name="name" placeholder="Enter Name" class="forum-InputLayout">
+        <input type="text" name="address" placeholder="Enter Address" class="forum-InputLayout">
+        <input type="email" name="email" placeholder="Enter Email" class="forum-InputLayout">
+        <input type="text" name="dog" placeholder="Enter Dog You Want to Adopt" class="forum-InputLayout">
+        <input class="forum-SubmitButton" type="submit" value="Submit">
+      </form>
+    </main>
 
-
-
-    
-    <!-- Footer Section -->
     <footer>
       <div class="footer-left">1234 Shelter Lane, Animal City</div>
       <div class="footer-center">
